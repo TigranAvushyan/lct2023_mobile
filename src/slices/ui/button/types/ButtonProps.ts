@@ -6,11 +6,12 @@ export type ButtonVariants = 'link' | 'success';
 export type ButtonState = 'active' | 'disabled' | 'static';
 
 export interface ButtonProps extends PressableProps {
-  children: string | number;
+  title?: string | number;
 
   variant?: ButtonVariants;
 
-  textClassName?: string;
+  titleClassName?: string;
+  containerClassName?: string;
 
   leftIcon?: (props: IconProps) => JSX.Element;
   leftIconProps?: IconProps;

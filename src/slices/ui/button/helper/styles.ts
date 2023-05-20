@@ -5,7 +5,7 @@ export const getWrapperVariantClassNames = (
   state: ButtonState,
   variant?: ButtonVariants
 ) => {
-  const buttonCommon = 'py-3 w-full rounded-full';
+  const buttonCommon = 'py-3 px-12 rounded-full';
   switch (variant) {
     case 'success':
       return cn(buttonCommon, 'bg-green');

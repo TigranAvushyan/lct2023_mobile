@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { GestureResponderEvent, Pressable, Text } from 'react-native';
+import { GestureResponderEvent, Pressable, Text, View } from 'react-native';
 import { ButtonProps, ButtonState } from '../types/ButtonProps';
 import cn from 'classnames';
 import {
@@ -9,8 +9,8 @@ import {
 
 export const Button: FC<ButtonProps> = ({
   className,
-  textClassName,
-  children,
+  titleClassName,
+  title,
   variant = 'success',
   leftIcon,
   leftIconProps,
@@ -18,6 +18,7 @@ export const Button: FC<ButtonProps> = ({
   rightIconProps,
   onPressIn,
   onPressOut,
+  containerClassName,
   ...props
 }) => {
   const [state, setState] = useState<ButtonState>(
@@ -33,32 +34,38 @@ export const Button: FC<ButtonProps> = ({
   };
 
   return (
-    <Pressable
-      {...props}
-      onPressIn={pressIn}
-      onPressOut={pressOut}
-      className={cn(
-        'flex items-center justify-center flex-row',
-        getWrapperVariantClassNames(state, variant),
-        className
-      )}
-    >
-      {leftIcon &&
-        leftIcon({
-          state,
-          ...leftIconProps,
-        })}
-      <Text
-        className={cn(getTextVariantClassNames(state, variant), textClassName)}
+    <View className={containerClassName}>
+      <Pressable
+        {...props}
+        onPressIn={pressIn}
+        onPressOut={pressOut}
+        className={cn(
+          'flex items-center justify-center flex-row',
+          getWrapperVariantClassNames(state, variant),
+          className
+        )}
       >
-        {children}
-      </Text>
-      {rightIcon &&
-        rightIcon({
-          fill: 'red',
-          state,
-          ...rightIconProps,
-        })}
-    </Pressable>
+        {leftIcon &&
+          leftIcon({
+            state,
+            ...leftIconProps,
+          })}
+        {title && (
+          <Text
+            className={cn(
+              getTextVariantClassNames(state, variant),
+              titleClassName
+            )}
+          >
+            {title}
+          </Text>
+        )}
+        {rightIcon &&
+          rightIcon({
+            state,
+            ...rightIconProps,
+          })}
+      </Pressable>
+    </View>
   );
 };
