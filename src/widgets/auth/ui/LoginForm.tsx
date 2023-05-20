@@ -23,7 +23,12 @@ export const LoginForm: FC = () => {
         onPasswordChange={fields.password.onChange}
       />
       <ForgotPassword onPress={navigateToSignUp} />
-      <SubmitButton onPress={() => submit()} title={'Войти'} />
+      <SubmitButton
+        onPress={() => {
+          submit();
+        }}
+        title={'Войти'}
+      />
       <Text className={'text-center my-3'}>или</Text>
       <VkAuth onPress={vkAuthFx} />
       <SignupButton onSignUp={navigateToSignUp} />

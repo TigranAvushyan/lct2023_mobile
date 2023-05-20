@@ -10,6 +10,7 @@ export const SubmitButton: FC<Props> = (props) => {
       variant={'success'}
       className={'w-[244px]'}
       title={'Отправить'}
+      onPress={props.onPress}
       {...props}
     />
   );

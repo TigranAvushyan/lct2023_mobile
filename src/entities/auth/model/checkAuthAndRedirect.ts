@@ -1,0 +1,31 @@
+import { createEvent, forward, sample } from 'effector';
+import { createJwtFx, refreshJwtFx, verifyJwtFx } from '../api/authApi';
+import { navigate } from '../../../slices/navigation/rootNavigation';
+import { NavigationScreens } from '../../../slices/navigation/types/navigationTypes';
+import { JWT_TOKEN, StorageKeys } from '../../../slices/constants/storageType';
+import { setStorageItemFx } from '../../storage/storageMethods';
+
+export const checkAuthAndRedirect = createEvent();
+
+forward({
+  from: checkAuthAndRedirect,
+  to: verifyJwtFx,
+});
+
+sample({
+  clock: [verifyJwtFx.doneData, refreshJwtFx.doneData, createJwtFx.doneData],
+  fn: () => 'Home' as NavigationScreens,
+  target: navigate,
+});
+
+sample({
+  clock: verifyJwtFx.fail,
+  fn: () => 'Login' as NavigationScreens,
+  target: navigate,
+});
+
+sample({
+  clock: [createJwtFx.doneData, refreshJwtFx.doneData],
+  fn: (value) => ({ key: JWT_TOKEN as StorageKeys, value }),
+  target: setStorageItemFx,
+});

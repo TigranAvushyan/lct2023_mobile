@@ -4,6 +4,7 @@ export type NavigationParamList = {
   Signup: undefined;
   Login: undefined;
   Home: undefined;
+  Loading: undefined;
 };
 
 export type NavigationScreens = keyof NavigationParamList;

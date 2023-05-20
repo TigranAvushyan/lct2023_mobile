@@ -1,16 +1,17 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { JWT_TOKEN } from '../../../slices/constants/storageKey';
-import { logout } from '../../auth/model/logout';
+import { logout } from '../../auth';
+import { getStorageItemFx } from '../../storage/storageMethods';
+import { JWT_TOKEN } from '../../../slices/constants/storageType';
 
 export const http = axios.create({
-  baseURL: '',
+  baseURL: 'https://lev4ek.ru/api',
 });
 
 http.interceptors.request.use(async (config) => {
-  const token = await AsyncStorage.getItem(JWT_TOKEN);
+  const token = await getStorageItemFx(JWT_TOKEN);
   if (token) {
-    config!.headers!.Authorization = 'TOKEN ' + token;
+    config!.headers!.Authorization = 'TOKEN ' + token.access;
   }
   return config;
 });
