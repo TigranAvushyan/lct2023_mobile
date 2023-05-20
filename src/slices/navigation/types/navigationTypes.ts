@@ -1,6 +1,7 @@
 import { NativeStackScreenProps } from 'react-native-screens/native-stack';
 
 export type NavigationParamList = {
+  Signup: undefined;
   Login: undefined;
   Home: undefined;
 };

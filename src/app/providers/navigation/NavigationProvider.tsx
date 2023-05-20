@@ -5,16 +5,18 @@ import { NavigationParamList } from '../../../slices/navigation/types/navigation
 import { LoginScreen } from '../../../screens/login';
 import { HomeScreen } from '../../../screens/home';
 import { navigationRef } from '../../../slices/navigation/rootNavigation';
+import { SignupScreen } from '../../../screens/signup';
 
 const Stack = createStackNavigator<NavigationParamList>();
 export const NavigationProvider: FC = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator
-        screenOptions={{ animationEnabled: true, header: () => null }}
+        screenOptions={{ animationEnabled: false, header: () => null }}
         initialRouteName={'Login'}
       >
         <Stack.Screen name={'Login'} component={LoginScreen} />
+        <Stack.Screen name={'Signup'} component={SignupScreen} />
         <Stack.Screen name={'Home'} component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>

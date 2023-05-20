@@ -5,14 +5,14 @@ import { Button } from '../../../slices/ui/button/ui/Button';
 interface Props {
   onSignUp: () => void;
 }
-export const SignUp: FC<Props> = ({ onSignUp }) => {
+export const SignupButton: FC<Props> = ({ onSignUp }) => {
   return (
-    <View className={'flex flex-row justify-center mt-auto mb-12'}>
+    <View className={'flex flex-row justify-center mt-6'}>
       <Text className={'mr-2'}>Ещё нет аккаунта?</Text>
       <Button
         onPress={onSignUp}
         variant={'link'}
-        titleClassName={'color-black font-bold'}
+        titleClassName={'text-black font-bold'}
         title={'Зарегистрироваться'}
       />
     </View>

@@ -1,11 +1,11 @@
 import React from 'react';
-import { LoginForm } from '../../../widgets/auth';
 import { AuthFormLayout } from '../../../features/auth/ui/AuthFormLayout';
+import { SignupForm } from '../../../widgets/auth/ui/SignupForm';
 
-export const LoginScreen = () => {
+export const SignupScreen = () => {
   return (
     <AuthFormLayout>
-      <LoginForm />
+      <SignupForm />
     </AuthFormLayout>
   );
 };
