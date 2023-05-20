@@ -2,13 +2,15 @@ import { createEffect } from 'effector';
 import { createForm } from 'effector-forms';
 import { SignupForm } from '../types/loginTypes';
 
-export const signup = createEffect(() => {
-  console.log('signup');
-});
+export const signup = createEffect((data: SignupForm) => {});
 
 export const signupForm = createForm<SignupForm>({
   fields: {
-    name: {
+    first_name: {
+      init: '',
+      rules: [{ name: 'required', validator: (value) => !!value }],
+    },
+    last_name: {
       init: '',
       rules: [{ name: 'required', validator: (value) => !!value }],
     },

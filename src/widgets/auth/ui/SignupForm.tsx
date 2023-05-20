@@ -16,7 +16,12 @@ export const SignupForm = () => {
       </Text>
       <Input
         placeholder={'Введи своё имя'}
-        onChangeText={fields.name?.onChange}
+        onChangeText={fields.first_name?.onChange}
+        className={'my-2'}
+      />
+      <Input
+        placeholder={'Введи свою фамилию'}
+        onChangeText={fields.last_name?.onChange}
         className={'my-2'}
       />
       <Input
