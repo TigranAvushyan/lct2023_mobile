@@ -1,5 +1,5 @@
 import React, { FC, Fragment } from 'react';
-import { Input } from '../../../slices/ui/input';
+import { Input } from '../../../shared/ui/input';
 
 interface Props {
   onEmailChange: (e: string) => void;

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { Input } from '../../../slices/ui/input';
-import { SubmitButton } from '../../../slices/ui/button/ui/SubmitButton';
-import { VkAuth } from './VkAuth';
-import { vkAuthFx } from '../../../entities/auth';
+import { Input } from '../../../../shared/ui/input';
+import { SubmitButton } from '../../../../shared/ui/button/ui/SubmitButton';
+import { VkAuth } from '../VkAuth';
+import { vkAuthFx } from '../../../../entities/auth';
 import { useForm } from 'effector-forms';
-import { signupForm } from '../../../entities/auth/model/signup';
+import { signupForm } from '../../../../entities/auth/model/signup';
 
 export const SignupForm = () => {
   const { fields } = useForm(signupForm);

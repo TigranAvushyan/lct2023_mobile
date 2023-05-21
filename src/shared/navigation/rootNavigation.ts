@@ -10,10 +10,13 @@ export const navigationRef =
   createNavigationContainerRef<NavigationParamList>();
 
 export const navigate = createEffect(
-  <Screen extends NavigationScreens>(
-    name: Screen,
-    params?: NavigationProps<Screen>
-  ) => {
+  <Screen extends NavigationScreens>({
+    name,
+    params,
+  }: {
+    name: Screen;
+    params?: NavigationProps<Screen>;
+  }) => {
     if (navigationRef.isReady()) {
       // @ts-ignore
       navigationRef.navigate(name, params);

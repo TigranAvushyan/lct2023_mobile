@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   StorageItemType,
   StorageKeys,
-} from '../../slices/constants/storageType';
+} from '../../shared/constants/storageType';
 
 export const setStorageItemFx = createEffect(
   async <Key extends StorageKeys>({

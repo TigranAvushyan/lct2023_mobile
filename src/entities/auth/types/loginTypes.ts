@@ -10,6 +10,10 @@ export interface SignupForm {
   confirmPassword: string;
 }
 
+export interface ForgotPasswordForm {
+  email: string;
+}
+
 export interface JWTToken {
   access: string;
   refresh: string;

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Button } from '../../../slices/ui/button/ui/Button';
-import { VkIcon } from '../../../slices/icons/vk/VkIcon';
+import { VkIcon } from '../../../shared/icons/vk/VkIcon';
+import { Button } from '../../../shared/ui/button/ui/Button';
 
 interface Props {
   onPress: () => void;

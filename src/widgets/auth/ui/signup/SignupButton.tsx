@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Text, View } from 'react-native';
-import { Button } from '../../../slices/ui/button/ui/Button';
+import { Button } from '../../../../shared/ui/button/ui/Button';
 
 interface Props {
   onSignUp: () => void;

@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { Button } from '../../../slices/ui/button/ui/Button';
+import { Button } from '../../../../shared/ui/button/ui/Button';
 
 interface Props {
   onPress: () => void;
 }
-export const ForgotPassword: FC<Props> = ({ onPress }) => {
+export const ForgotPasswordButton: FC<Props> = ({ onPress }) => {
   return (
     <Button
       onPress={onPress}

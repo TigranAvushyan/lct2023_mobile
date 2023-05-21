@@ -1,9 +1,9 @@
 import { createEffect } from 'effector';
-import { LoginForm, JWTToken } from '../types/loginTypes';
+import { JWTToken, LoginForm } from '../types/loginTypes';
 import { http } from '../../server/model/http';
-import { urls } from '../../../slices/constants/apiUrls';
+import { urls } from '../../../shared/constants/apiUrls';
 import { getStorageItemFx } from '../../storage/storageMethods';
-import { JWT_TOKEN } from '../../../slices/constants/storageType';
+import { JWT_TOKEN } from '../../../shared/constants/storageType';
 
 export const createJwtFx = createEffect(async (data: LoginForm) => {
   const res = await http.post<JWTToken>(urls.jwtCreate(), data);

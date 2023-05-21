@@ -2,16 +2,20 @@ import React, { FC, Fragment } from 'react';
 import { Login } from '../../../features/auth/ui/Login';
 import { VkAuth } from './VkAuth';
 import { Text } from 'react-native';
-import { ForgotPassword } from './ForgotPassword';
+import { ForgotPasswordButton } from './forget-password/ForgotPasswordButton';
 import { useForm } from 'effector-forms';
 import { loginForm, vkAuthFx } from '../../../entities/auth';
-import { SignupButton } from './SignupButton';
-import { SubmitButton } from '../../../slices/ui/button/ui/SubmitButton';
-import { navigate } from '../../../slices/navigation/rootNavigation';
+import { SignupButton } from './signup/SignupButton';
+import { SubmitButton } from '../../../shared/ui/button/ui/SubmitButton';
+import { navigate } from '../../../shared/navigation/rootNavigation';
 
-export const LoginForm: FC = () => {
+type Props = {
+  onPressForgotPassword: () => void;
+};
+
+export const LoginForm: FC<Props> = ({ onPressForgotPassword }) => {
   const navigateToSignUp = () => {
-    navigate('Signup');
+    navigate({ name: 'Signup' });
   };
 
   const { fields, submit } = useForm(loginForm);
@@ -22,7 +26,7 @@ export const LoginForm: FC = () => {
         onEmailChange={fields.email.onChange}
         onPasswordChange={fields.password.onChange}
       />
-      <ForgotPassword onPress={navigateToSignUp} />
+      <ForgotPasswordButton onPress={onPressForgotPassword} />
       <SubmitButton
         onPress={() => {
           submit();
