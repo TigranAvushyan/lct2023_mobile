@@ -10,7 +10,7 @@ export const http = axios.create({
 http.interceptors.request.use(async (config) => {
   const token = await getStorageItemFx(JWT_TOKEN);
   if (token) {
-    config!.headers!.Authorization = 'TOKEN ' + token.access;
+    config!.headers!.Authorization = 'Bearer ' + token.access;
   }
   return config;
 });

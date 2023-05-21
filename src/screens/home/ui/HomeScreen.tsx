@@ -1,8 +1,10 @@
-import { Button } from 'react-native';
-import { navigate } from '../../../shared/navigation/rootNavigation';
+import { HomeLayout } from '../../../features/home/ui/HomeLayout';
+import { Text } from 'react-native';
 
 export const HomeScreen = () => {
   return (
-    <Button title={'logout'} onPress={() => navigate({ name: 'Login' })} />
+    <HomeLayout title={'Главная'}>
+      <Text>Tigean</Text>
+    </HomeLayout>
   );
 };
