@@ -1,10 +1,10 @@
 import { HomeLayout } from '../../../features/home/ui/HomeLayout';
-import { Text } from 'react-native';
+import { PointProgressBar } from '../../../shared/ui/point-porgress-bar/ui/PointProgressBar';
 
 export const HomeScreen = () => {
   return (
     <HomeLayout title={'Главная'}>
-      <Text>Tigean</Text>
+      <PointProgressBar progress={60} />
     </HomeLayout>
   );
 };
