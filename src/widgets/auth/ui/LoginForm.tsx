@@ -8,6 +8,7 @@ import { loginForm, vkAuthFx } from '../../../entities/auth';
 import { SignupButton } from './signup/SignupButton';
 import { SubmitButton } from '../../../shared/ui/button/ui/SubmitButton';
 import { navigate } from '../../../shared/navigation/rootNavigation';
+import { vkAuthButtonClick } from '../../../entities/auth/model/vkAuth';
 
 type Props = {
   onPressForgotPassword: () => void;
@@ -34,7 +35,7 @@ export const LoginForm: FC<Props> = ({ onPressForgotPassword }) => {
         title={'Войти'}
       />
       <Text className={'text-center my-3'}>или</Text>
-      <VkAuth onPress={vkAuthFx} />
+      <VkAuth onPress={vkAuthButtonClick} />
       <SignupButton onSignUp={navigateToSignUp} />
     </Fragment>
   );

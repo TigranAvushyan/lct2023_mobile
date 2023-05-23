@@ -4,4 +4,6 @@ export const urls = {
   jwtRefresh: () => '/v1/auth/jwt/refresh/',
 
   resetPassword: () => '/v1/auth/users/reset_password/',
+
+  vkAuthLink: () => `/v1/auth/vk_redirect/`,
 };

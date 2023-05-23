@@ -8,7 +8,7 @@ import { navigationRef } from '../../../shared/navigation/rootNavigation';
 import { SignupScreen } from '../../../screens/signup';
 import { LoadingScreen } from '../../../screens/loading/ui/LoadingScreen';
 import { WaitEmailConfirmScreen } from '../../../screens/wait-email-confirm/WaitEmailConfirmScreen';
-import { checkAuthAndRedirect } from '../../../entities/auth/model/checkAuthAndRedirect';
+import { WebViewScreen } from '../../../screens/web-view';
 
 const Stack = createStackNavigator<NavigationParamList>();
 export const NavigationProvider: FC = () => {
@@ -20,9 +20,10 @@ export const NavigationProvider: FC = () => {
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator
         screenOptions={{ animationEnabled: false, header: () => null }}
-        initialRouteName={'Home'}
+        initialRouteName={'Login'}
       >
         <Stack.Screen name={'Login'} component={LoginScreen} />
+        <Stack.Screen name={'WebView'} component={WebViewScreen} />
         <Stack.Screen name={'Signup'} component={SignupScreen} />
         <Stack.Screen
           name={'WaitEmailConfirm'}

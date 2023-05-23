@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Text, View } from 'react-native';
 import { Input } from '../../../../shared/ui/input';
 import { SubmitButton } from '../../../../shared/ui/button/ui/SubmitButton';
@@ -7,7 +7,10 @@ import { vkAuthFx } from '../../../../entities/auth';
 import { useForm } from 'effector-forms';
 import { signupForm } from '../../../../entities/auth/model/signup';
 
-export const SignupForm = () => {
+type Props = {
+  onVkAuthPress: () => void;
+};
+export const SignupForm: FC<Props> = ({ onVkAuthPress }) => {
   const { fields } = useForm(signupForm);
   return (
     <View>
@@ -44,7 +47,7 @@ export const SignupForm = () => {
       />
       <SubmitButton />
       <Text className={'text-center my-3'}>или</Text>
-      <VkAuth onPress={vkAuthFx} />
+      <VkAuth onPress={onVkAuthPress} />
     </View>
   );
 };

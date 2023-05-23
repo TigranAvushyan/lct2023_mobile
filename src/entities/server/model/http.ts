@@ -2,9 +2,10 @@ import axios from 'axios';
 import { logout } from '../../auth';
 import { getStorageItemFx } from '../../storage/storageMethods';
 import { JWT_TOKEN } from '../../../shared/constants/storageType';
+import { BASE_URL } from '../consts/httpConsts';
 
 export const http = axios.create({
-  baseURL: 'https://lev4ek.ru/api',
+  baseURL: BASE_URL,
 });
 
 http.interceptors.request.use(async (config) => {

@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "lct2023",
     "name": "lct2023_mobile",
     "slug": "lct2023_mobile",
     "version": "1.0.0",

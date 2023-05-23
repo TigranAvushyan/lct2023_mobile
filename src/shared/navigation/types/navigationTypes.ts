@@ -3,6 +3,7 @@ import { NativeStackScreenProps } from 'react-native-screens/native-stack';
 export type NavigationParamList = {
   Signup: undefined;
   Login: undefined;
+  WebView: { url: string };
   WaitEmailConfirm: { email: string };
   Home: undefined;
   Loading: undefined;

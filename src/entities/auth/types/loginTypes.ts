@@ -18,3 +18,7 @@ export interface JWTToken {
   access: string;
   refresh: string;
 }
+
+export interface VkAuthLink {
+  link: string;
+}
