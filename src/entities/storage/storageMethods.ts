@@ -11,7 +11,7 @@ export const setStorageItemFx = createEffect(
     value,
   }: {
     key: Key;
-    value: StorageItemType<Key>;
+    value: StorageItemType<Key> | null;
   }) => {
     await AsyncStorage.setItem(key, JSON.stringify(value));
   }

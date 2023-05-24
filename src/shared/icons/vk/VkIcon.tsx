@@ -1,8 +1,8 @@
-import { Svg, Path } from 'react-native-svg';
+import { Path, Svg } from 'react-native-svg';
 import { IconProps } from '../types';
 import { getIconColor } from '../helper';
 
-export const VkIcon = (props: IconProps) => {
+export function VkIcon(props: IconProps) {
   return (
     <Svg width='24' height='14' viewBox='0 0 24 14' fill='none' {...props}>
       <Path
@@ -13,4 +13,4 @@ export const VkIcon = (props: IconProps) => {
       />
     </Svg>
   );
-};
+}

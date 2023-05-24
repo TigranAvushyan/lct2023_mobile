@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { logout } from '../../auth';
 import { getStorageItemFx } from '../../storage/storageMethods';
 import { JWT_TOKEN } from '../../../shared/constants/storageType';
 import { BASE_URL } from '../consts/httpConsts';
+import { checkAuthAndRedirect } from '../../auth/model/checkAuthAndRedirect';
 
 export const http = axios.create({
   baseURL: BASE_URL,
@@ -23,7 +23,7 @@ http.interceptors.response.use(
   async function (error) {
     switch (error.response.status) {
       case 403:
-        await logout();
+        checkAuthAndRedirect();
     }
     return Promise.reject(error);
   }

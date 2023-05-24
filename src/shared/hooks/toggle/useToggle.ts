@@ -1,13 +1,6 @@
 import { useState } from 'react';
 
-const getItem = <T, K>(isActive: boolean, item?: [T, K]) => {
-  if (item) {
-    return isActive ? item[0] : item[1];
-  }
-  return isActive;
-};
-
-export const useToggle = <T, K>(init = false, item?: [T, K]) => {
+export const useToggle = (init = false) => {
   const [active, setActive] = useState<boolean>(init);
 
   const setTrue = () => {
@@ -21,7 +14,7 @@ export const useToggle = <T, K>(init = false, item?: [T, K]) => {
   };
 
   return {
-    active: getItem(active, item),
+    active,
     toggle,
     setTrue,
     setFalse,

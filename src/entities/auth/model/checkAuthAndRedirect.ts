@@ -4,6 +4,7 @@ import { navigate } from '../../../shared/navigation/rootNavigation';
 import { NavigationScreens } from '../../../shared/navigation/types/navigationTypes';
 import { JWT_TOKEN, StorageKeys } from '../../../shared/constants/storageType';
 import { setStorageItemFx } from '../../storage/storageMethods';
+import { logout } from './logout';
 
 export const checkAuthAndRedirect = createEvent();
 
@@ -18,10 +19,9 @@ sample({
   target: navigate,
 });
 
-sample({
-  clock: verifyJwtFx.fail,
-  fn: () => ({ name: 'Login' as NavigationScreens }),
-  target: navigate,
+forward({
+  from: verifyJwtFx.fail,
+  to: logout,
 });
 
 sample({

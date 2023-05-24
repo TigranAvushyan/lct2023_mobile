@@ -9,18 +9,19 @@ import { SignupScreen } from '../../../screens/signup';
 import { LoadingScreen } from '../../../screens/loading/ui/LoadingScreen';
 import { WaitEmailConfirmScreen } from '../../../screens/wait-email-confirm/WaitEmailConfirmScreen';
 import { WebViewScreen } from '../../../screens/web-view';
+import { checkAuthAndRedirect } from '../../../entities/auth/model/checkAuthAndRedirect';
 
 const Stack = createStackNavigator<NavigationParamList>();
 export const NavigationProvider: FC = () => {
   useEffect(() => {
-    // checkAuthAndRedirect();
+    checkAuthAndRedirect();
   }, []);
 
   return (
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator
         screenOptions={{ animationEnabled: false, header: () => null }}
-        initialRouteName={'Login'}
+        initialRouteName={'Loading'}
       >
         <Stack.Screen name={'Login'} component={LoginScreen} />
         <Stack.Screen name={'WebView'} component={WebViewScreen} />

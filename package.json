@@ -2,8 +2,9 @@
   "name": "lct2023_mobile",
   "version": "1.0.0",
   "scripts": {
-    "start": "expo start -r",
+    "start": "expo start",
     "android": "expo start --android",
+    "start:cleat": "expo start --clear",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "eslint App.tsx 'src/**/*.{js,jsx,ts,tsx,json}'",
@@ -42,6 +43,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@types/node": "^20.2.3",
     "@types/react": "~18.0.14",
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "@typescript-eslint/parser": "^5.59.6",

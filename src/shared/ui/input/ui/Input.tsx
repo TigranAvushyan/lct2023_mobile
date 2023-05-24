@@ -7,7 +7,7 @@ export const Input = forwardRef<TextInput, InputProps>(
   ({ className, ...props }, ref) => {
     return (
       <TextInput
-        className={cn('px-4 py-3.5 rounded-full  bg-white', className)}
+        className={cn('px-4 py-3.5 rounded-full bg-white', className)}
         {...props}
         ref={ref}
       />
