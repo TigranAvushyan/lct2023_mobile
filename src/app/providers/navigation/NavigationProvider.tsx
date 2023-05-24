@@ -10,6 +10,7 @@ import { LoadingScreen } from '../../../screens/loading/ui/LoadingScreen';
 import { WaitEmailConfirmScreen } from '../../../screens/wait-email-confirm/WaitEmailConfirmScreen';
 import { WebViewScreen } from '../../../screens/web-view';
 import { checkAuthAndRedirect } from '../../../entities/auth/model/checkAuthAndRedirect';
+import { MapScreen } from '../../../screens/map';
 
 const Stack = createStackNavigator<NavigationParamList>();
 export const NavigationProvider: FC = () => {
@@ -31,6 +32,7 @@ export const NavigationProvider: FC = () => {
           component={WaitEmailConfirmScreen}
         />
         <Stack.Screen name={'Home'} component={HomeScreen} />
+        <Stack.Screen name={'Map'} component={MapScreen} />
         <Stack.Screen name={'Loading'} component={LoadingScreen} />
       </Stack.Navigator>
     </NavigationContainer>

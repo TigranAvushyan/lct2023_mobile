@@ -6,6 +6,7 @@ export type NavigationParamList = {
   WebView: { url: string };
   WaitEmailConfirm: { email: string };
   Home: undefined;
+  Map: undefined;
   Loading: undefined;
 };
 

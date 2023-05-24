@@ -15,7 +15,7 @@ forward({
 
 sample({
   clock: [verifyJwtFx.doneData, refreshJwtFx.doneData, createJwtFx.doneData],
-  fn: () => ({ name: 'Home' as NavigationScreens }),
+  fn: () => ({ name: 'Map' as NavigationScreens }),
   target: navigate,
 });
 
